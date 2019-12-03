@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        // var a = 5
+        // var a = 10
+        // alert(a) 
+        // let b = 5;  //使用let 定义变量 无法重复定义
+        // // let b = 10
+        // const c = 50; //const 定义的变量无法被修改 const 和 let 把变量限制在块作用域中
+
+        // //解构赋值 定义与赋值必须同时进行
+        // let [x,y,z] = [1,2,3]
+        // alert(x+","+y+","+z)
+
+        // 箭头函数 就是 C# 中匿名函数的方式 建议的函数定义方式
+        // let f =(a,b)=>{
+        //     return a+b
+        // }
+        // window.onload=()=>{
+        //     alert(f(1,5))
+        // }
+
+        //1. 只有一个参数的时候 ()可以省
+        a=>{
+            return a
+        }
+        //2.函数体中只有一句return 时{}和return可以省略
+        a=>a
+
+        // 动态参数 跟go语言时一样的
+        let show = (a,b,...args)=>{
+            console.log(a,b,args);
+            
+        }
+        show(1,2,'a',5);
+
+        // 同go语言一样 。。。也可以解包
+        // let a = [1,2,3];
+        // console.log(a)
+        // console.log(...a)
+
+        //跟python 一样的map函数
+        // let scores=[50,80,40,90]
+        // let r = scores.map(item=>{
+        //     if(item>=60)
+        //     {
+        //         return "及格";
+        //     }else{
+        //         return "不及格";
+        //     }
+        // })
+        // alert(r)
+
+        //跟python  一样的filter 函数
+        let arr = [1,2,3,4,5,6]
+        // let arr2 = arr.filter(item=>item%2==0)
+        // console.log(arr)
+        // console.log(arr2)
+
+        //foreach 遍历
+        let sum = 0
+        arr.forEach(item=>sum+=item)
+        console.log(sum)
+
+        //reduce 数组聚合 
+        //例如：求平均值 temp 保留的是每一次迭代后的运算结果
+        console.log(arr.reduce((temp,item,index)=>{
+            if(index==arr.length-1){
+                return (temp+item)/arr.length
+            }else{
+                return temp+item
+            }
+        }))
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
